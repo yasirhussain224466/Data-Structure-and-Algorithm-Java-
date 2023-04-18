@@ -1,14 +1,14 @@
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] intArray = { -15, 7, 20, 1, -22, 35, 55 };
+        int[] intArray = { -15, 7, 100, 0, -22, 35, 55 };
         for (int unsortedArray = intArray.length - 1; unsortedArray > 0; unsortedArray--) {
-            int temp = 0;
-            for (int i = 1; i < unsortedArray; i++) {
-                if (compareLargestNumber(intArray, temp, i)) {
-                    temp = i;
+            int largest = 0;
+            for (int i = 1; i <= unsortedArray; i++) {
+                if (compareLargestNumber(intArray, largest, i) == true) {
+                    largest = i;
                 }
             }
-            swap(intArray, temp, unsortedArray);
+            swap(intArray, largest, unsortedArray);
         }
         for (int i = 0; i < intArray.length; i++) {
             System.out.println(intArray[i]);
